@@ -25,4 +25,16 @@ class AlamofireNetworkRequest {
             }
         }
     }
+    
+    static func responseData(url: String){
+        request(url).responseData { responseData in
+            switch responseData.result {
+            case .success(let data):
+                guard let string = String(data: data, encoding: .utf8) else {return}
+                print(string)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

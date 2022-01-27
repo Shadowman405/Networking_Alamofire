@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 class ImageViewController: UIViewController {
     
@@ -23,6 +24,21 @@ class ImageViewController: UIViewController {
             
             self.activityIndicator.stopAnimating()
             self.imageView.image = image
+        }
+    }
+    
+    func fetchDataWithAlamofire() {
+        
+        request(url).responseData { (responseData) in
+        
+            switch responseData.result {
+            case .success(let data):
+                guard let image = UIImage(data: data) else {return}
+                self.activityIndicator.stopAnimating()
+                self.imageView.image = image
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     

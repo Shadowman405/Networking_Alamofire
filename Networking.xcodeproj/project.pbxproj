@@ -115,6 +115,7 @@
 		BFF41D6B27A31DED00985654 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BFF41D6927A3165400985654 /* AlamofireNetworkRequest.swift */,
 				A8493E762147DC20004DE8A8 /* NetworkManager.swift */,
 				A855BC1B214F71FE00075CAE /* DataProvider.swift */,
 			);
@@ -124,7 +125,6 @@
 		BFF41D6C27A31E1200985654 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BFF41D6927A3165400985654 /* AlamofireNetworkRequest.swift */,
 				A895579D214278DB00355357 /* Course.swift */,
 				A8493E722147D7CA004DE8A8 /* CollectionViewCell.swift */,
 				A8493E7A214924F1004DE8A8 /* ImageProperties.swift */,
