@@ -12,6 +12,7 @@ enum Actions: String, CaseIterable {
     case ourCoursesAlamofire = "Our Courses (Alamofire)"
     case responseData = "responceData"
     case responseString = "responseString"
+    case response = "response"
 }
 
 private let reuseIdentifier = "Cell"
@@ -131,6 +132,8 @@ class MainViewController: UICollectionViewController {
             AlamofireNetworkRequest.responseData(url: swiftbookApi)
         case .responseString:
             AlamofireNetworkRequest.responseString(url: swiftbookApi)
+        case .response:
+            AlamofireNetworkRequest.response(url: swiftbookApi)
         }
     }
     
