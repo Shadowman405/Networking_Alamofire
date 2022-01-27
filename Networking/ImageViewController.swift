@@ -1,11 +1,3 @@
-//
-//  ImageViewController.swift
-//  Networking
-//
-//  Created by Alexey Efimov on 27.07.2018.
-//  Copyright © 2018 Alexey Efimov. All rights reserved.
-//
-
 import UIKit
 
 class ImageViewController: UIViewController {
