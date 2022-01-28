@@ -77,7 +77,19 @@ class AlamofireNetworkRequest {
         guard let url = URL(string: url) else {return}
         
         request(url).validate().downloadProgress { progress in
-            <#code#>
+            print("total unit count:\(progress.totalUnitCount)\n")
+            print("completed unit count:\(progress.completedUnitCount)\n")
+            print("fraction completed:\(progress.fractionCompleted)\n")
+            print("localizedDescription:\(progress.localizedDescription)\n")
+            print("-----------------------------------------------------")
+            
+            
+        }.response { response in
+            guard let data = response.data,let image = UIImage(data: data)  else {return}
+            
+            DispatchQueue.main.async {
+                completion(image)
+            }
         }
     }
 }
