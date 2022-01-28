@@ -57,4 +57,27 @@ class AlamofireNetworkRequest {
             print(string)
         }
     }
+    
+    static func downloadImage(url: String, completion: @escaping (_ image: UIImage)->()) {
+        guard let url = URL(string: url) else {return}
+        
+        request(url).responseData { (responseData) in
+        
+            switch responseData.result {
+            case .success(let data):
+                guard let image = UIImage(data: data) else {return}
+                completion(image)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    static func downloadImageWithProgress(url: String, completion: @escaping (_ image: UIImage) -> ()) {
+        guard let url = URL(string: url) else {return}
+        
+        request(url).validate().downloadProgress { progress in
+            <#code#>
+        }
+    }
 }

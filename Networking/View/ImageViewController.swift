@@ -7,12 +7,16 @@ class ImageViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var completedLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
         activityIndicator.hidesWhenStopped = true
-        fetchImage()
+        completedLabel.isHidden = true
+        progressView.isHidden = true
     }
     
     func fetchImage() {
@@ -28,18 +32,14 @@ class ImageViewController: UIViewController {
     }
     
     func fetchDataWithAlamofire() {
-        
-        request(url).responseData { (responseData) in
-        
-            switch responseData.result {
-            case .success(let data):
-                guard let image = UIImage(data: data) else {return}
-                self.activityIndicator.stopAnimating()
-                self.imageView.image = image
-            case .failure(let error):
-                print(error)
-            }
+        AlamofireNetworkRequest.downloadImage(url: url) { image in
+            self.activityIndicator.stopAnimating()
+            self.imageView.image = image
         }
+    }
+    
+    func downloadImageWithProgress() {
+        
     }
     
 }
