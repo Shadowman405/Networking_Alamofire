@@ -11,6 +11,9 @@ import Alamofire
 
 class AlamofireNetworkRequest {
     
+    static var onProgress: ((Double) -> ())?
+    static var completed: ((String) -> ())?
+    
     static func sendRequest(url:String, completion: @escaping (_ courses: [Course]) -> ()){
         guard let url = URL(string: url) else {return}
         request(url, method: .get).validate().responseJSON { (response) in
@@ -83,6 +86,8 @@ class AlamofireNetworkRequest {
             print("localizedDescription:\(progress.localizedDescription)\n")
             print("-----------------------------------------------------")
             
+            self.onProgress?(progress.fractionCompleted)
+            self.completed?(progress.localizedDescription)
             
         }.response { response in
             guard let data = response.data,let image = UIImage(data: data)  else {return}
