@@ -27,7 +27,7 @@ struct Course: Decodable {
         let link = json["link"] as? String
         let imageUrl = json["imageUrl"] as? String
         let numberOfLessons = json["numberOfLessons"] as? Int
-        let numberOfTests = json["numberOfLessons"] as? Int
+        let numberOfTests = json["numberOfTests"] as? Int
         
         self.id = id
         self.name = name

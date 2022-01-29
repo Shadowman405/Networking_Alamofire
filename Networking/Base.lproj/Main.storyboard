@@ -101,7 +101,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mC6-oQ-c3l">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mC6-oQ-c3l">
                                                     <rect key="frame" x="148" y="72.5" width="212" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="WkS-sC-fpr"/>
@@ -261,6 +261,7 @@
                         <segue destination="eEq-kV-HBK" kind="show" identifier="ResponseData" id="1mX-6I-tEQ"/>
                         <segue destination="eEq-kV-HBK" kind="show" identifier="LargeImage" id="3rv-HR-UhY"/>
                         <segue destination="Okz-m4-eD1" kind="show" identifier="PostRequest" id="B6T-Zx-LQ5"/>
+                        <segue destination="Okz-m4-eD1" kind="show" identifier="PutRequest" id="kaA-Fn-X0X"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNp-Q0-GA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -287,7 +288,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B6T-Zx-LQ5"/>
+        <segue reference="kaA-Fn-X0X"/>
         <segue reference="3rv-HR-UhY"/>
     </inferredMetricsTieBreakers>
     <resources>
