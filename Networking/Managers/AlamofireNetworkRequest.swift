@@ -133,8 +133,8 @@ class AlamofireNetworkRequest {
         let userData: [String:Any] = ["name":"Network Request With Alamofire",
                                       "link":"https://swiftbook.ru/contents/our-first-applications/",
                                       "imageUrl":"https://swiftbook.ru/wp-content/uploads/sites/2/2018/08/notifications-course-with-background.png",
-                                      "numberOfLessons":18,
-                                      "numberOfTests":10
+                                      "numberOfLessons": "18",
+                                      "numberOfTests": "10"
         ]
         
         request(url, method: .put, parameters: userData).responseJSON { responseJSON in
